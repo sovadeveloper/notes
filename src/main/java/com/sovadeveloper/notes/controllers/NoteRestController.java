@@ -13,7 +13,7 @@ public class NoteRestController {
     private final NoteService noteService;
 
     @GetMapping
-    public ResponseEntity getAll(){
+    public ResponseEntity<?> getAll(){
         try {
             return ResponseEntity.ok(noteService.getAll());
         }catch (Exception e){
@@ -23,7 +23,7 @@ public class NoteRestController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getById(@PathVariable Long id){
+    public ResponseEntity<?> getById(@PathVariable Long id){
         try {
             return ResponseEntity.ok(noteService.getById(id));
         }catch (Exception e){
@@ -33,7 +33,7 @@ public class NoteRestController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody NoteEntity noteEntity){
+    public ResponseEntity<?> create(@RequestBody NoteEntity noteEntity){
         try {
             return ResponseEntity.ok(noteService.create(noteEntity));
         }catch (Exception e){
@@ -43,7 +43,7 @@ public class NoteRestController {
     }
 
     @PutMapping
-    public ResponseEntity edit(@RequestBody NoteEntity noteEntity){
+    public ResponseEntity<?> edit(@RequestBody NoteEntity noteEntity){
         try {
             return ResponseEntity.ok(noteService.edit(noteEntity));
         }catch (Exception e){
@@ -53,7 +53,7 @@ public class NoteRestController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id){
         try {
             return ResponseEntity.ok(noteService.delete(id));
         }catch (Exception e){
