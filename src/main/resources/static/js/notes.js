@@ -1,5 +1,3 @@
-console.log("notes.js успешно подключен!")
-
 function addNote(){
     let title = document.getElementById("title").value;
     let text = tinymce.activeEditor.getContent();
